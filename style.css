@@ -1,5 +1,6 @@
 /* ===================================
-   HAPPY BIRTHDAY WEBSITE
+   HAPPY BIRTHDAY U M A M A 💖
+   My Wife & My Best Friend
    By Muneeb ❤️
 =================================== */
 
@@ -15,7 +16,7 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#ff6b81,#ff9ff3,#7d5fff,#48dbfb);
+    background:linear-gradient(135deg,#ff4d6d,#ff758c,#a18cd1,#38ef7d);
     background-size:400% 400%;
     animation:bgMove 15s infinite ease;
     color:#fff;
@@ -37,22 +38,26 @@ body{
     left:0;
     width:100%;
     height:100%;
-    background:#111;
+    background:#0f0c20;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
     z-index:9999;
 }
 
 #loader h1{
-    font-size:35px;
+    font-size:38px;
+    font-weight:700;
+    color:#fff;
+    text-shadow:0 0 15px rgba(255,105,180,0.6);
     animation:pulse 1.2s infinite;
 }
 
 @keyframes pulse{
-    0%{opacity:.5;}
-    50%{opacity:1;}
-    100%{opacity:.5;}
+    0%{ opacity:.5; transform:scale(0.98); }
+    50%{ opacity:1; transform:scale(1.02); }
+    100%{ opacity:.5; transform:scale(0.98); }
 }
 
 /* Hero Section */
@@ -68,39 +73,44 @@ body{
 
 .hero h3{
     font-size:28px;
-    margin-bottom:20px;
+    margin-bottom:15px;
+    letter-spacing:1px;
+    color:#ffe66d;
+    text-shadow:0 0 10px rgba(255,230,109,0.4);
 }
 
 .hero h1{
     font-size:75px;
-    font-weight:700;
+    font-weight:800;
     margin-bottom:20px;
-    text-shadow:0 0 20px rgba(255,255,255,.4);
+    text-shadow:0 0 25px rgba(255,255,255,.6);
+    letter-spacing:-1px;
 }
 
 .subtitle{
     max-width:750px;
     font-size:22px;
     line-height:1.8;
+    text-shadow:0 2px 4px rgba(0,0,0,0.2);
 }
 
 button{
     margin-top:40px;
-    padding:16px 40px;
+    padding:16px 42px;
     font-size:18px;
     border:none;
     border-radius:50px;
     cursor:pointer;
-    background:white;
+    background:#ffffff;
     color:#ff4d6d;
     font-weight:bold;
-    transition:.35s;
+    transition:.35s ease;
     animation:glow 2s infinite;
 }
 
 button:hover{
     transform:scale(1.08);
-    box-shadow:0 0 25px rgba(255,255,255,.5);
+    box-shadow:0 0 30px rgba(255,255,255,.8);
 }
 
 /* Sections Layout */
@@ -112,18 +122,19 @@ section h2{
     text-align:center;
     margin-bottom:35px;
     font-size:42px;
-    text-shadow:0 0 10px rgba(255,255,255,.4);
+    text-shadow:0 0 12px rgba(255,255,255,.5);
 }
 
 /* Glass Message Card */
 .glass{
     max-width:900px;
     margin:auto;
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(18px);
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.3);
     padding:45px;
     border-radius:25px;
-    box-shadow:0 10px 35px rgba(0,0,0,.25);
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
     text-align:center;
     animation:floatCard 5s ease-in-out infinite;
 }
@@ -136,6 +147,7 @@ section h2{
 .glass h3{
     margin-top:30px;
     font-size:28px;
+    color:#ffe66d;
 }
 
 .glass p{
@@ -146,10 +158,11 @@ section h2{
 
 .glass span{
     color:#ffe66d;
-    font-size:35px;
+    font-weight:bold;
+    font-size:24px;
+    text-shadow:0 0 8px rgba(255,230,109,0.5);
 }
 
-/* ⚡ THE FIX: This forces elements to disappear when they have the 'hidden' class */
 .hidden {
     display: none !important;
 }
@@ -166,7 +179,8 @@ section h2{
 .gift{
     width:170px;
     height:170px;
-    background:rgba(255,255,255,.15);
+    background:rgba(255,255,255,.2);
+    border:1px solid rgba(255,255,255,0.4);
     border-radius:25px;
     display:flex;
     flex-direction:column;
@@ -174,53 +188,58 @@ section h2{
     align-items:center;
     font-size:65px;
     cursor:pointer;
-    transition:.3s;
+    transition:.3s ease;
     backdrop-filter:blur(10px);
     animation:floatCard 5s ease-in-out infinite;
 }
 
 .gift:hover{
     transform:translateY(-10px) scale(1.08);
+    background:rgba(255,255,255,.3);
+    box-shadow:0 10px 25px rgba(255,255,255,0.3);
 }
 
 .gift p{
     margin-top:10px;
     font-size:20px;
+    font-weight:600;
 }
 
-/* ⚡ THE POPUP FIX: High z-index keeps it over everything, display hidden rule keeps it hidden on launch */
+/* Popup Window */
 .popup{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,.75);
+    background:rgba(0,0,0,.8);
+    backdrop-filter:blur(5px);
     display:flex;
     justify-content:center;
     align-items:center;
     z-index:99999; 
 }
 
-/* Forces the popup to look hidden when 'hidden' class is added */
 .popup.hidden {
     display: none !important;
 }
 
 .popup-content{
-    background:white;
-    color:#333;
-    padding:35px;
-    border-radius:20px;
-    max-width:500px;
+    background:#ffffff;
+    color:#2b2b2b;
+    padding:40px;
+    border-radius:24px;
+    max-width:520px;
     width:90%;
     text-align:center;
     position:relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .popup-content h2{
     margin-bottom:20px;
+    color:#ff4d6d;
+    font-size:32px;
 }
 
 .popup-content p{
@@ -231,23 +250,28 @@ section h2{
 #closePopup{
     position:absolute;
     right:20px;
-    top:10px;
-    font-size:35px;
+    top:15px;
+    font-size:30px;
     cursor:pointer;
-    color: #333;
+    color: #888;
+    transition:.2s;
     z-index: 100000;
+}
+
+#closePopup:hover{
+    color:#ff4d6d;
 }
 
 /* Letter Section */
 .letter{
     max-width:900px;
     margin:auto;
-    background:white;
-    color:#333;
-    padding:50px;
+    background:#ffffff;
+    color:#333333;
+    padding:55px;
     border-radius:25px;
     line-height:2;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
     animation:floatCard 5s ease-in-out infinite;
 }
 
@@ -255,11 +279,20 @@ section h2{
     text-align:center;
     margin-bottom:25px;
     font-size:40px;
+    color:#ff4d6d;
+    text-shadow:none;
+}
+
+.letter p{
+    font-size:20px;
+    margin-bottom:20px;
 }
 
 .letter h3{
     text-align:center;
     margin-top:35px;
+    font-size:26px;
+    color:#ff4d6d;
 }
 
 /* Final Screen */
@@ -270,6 +303,7 @@ section h2{
 #finalSection h1{
     font-size:60px;
     margin-bottom:30px;
+    text-shadow:0 0 20px rgba(255,255,255,0.6);
 }
 
 #finalSection p{
@@ -281,6 +315,7 @@ section h2{
 
 #finalSection h2{
     margin-top:40px;
+    color:#ffe66d;
 }
 
 /* Background Floating Animations */
@@ -296,7 +331,6 @@ section h2{
     overflow:hidden;
 }
 
-/* Twinkling stars */
 .stars::before{
     content:"";
     position:absolute;
@@ -324,16 +358,15 @@ section h2{
     to{ opacity:1; transform:scale(1.4); }
 }
 
-/* Floating Hearts */
 .hearts::before{
-    content:"❤️ ❤️ 💖 💕 ❤️ 💖 💕 ❤️";
+    content:"❤️ 💖 💕 ✨ ❤️ 💖 💕 ✨";
     position:absolute;
-    font-size:30px;
+    font-size:32px;
     left:-20%;
     top:25%;
     white-space:nowrap;
-    animation:heartMove 22s linear infinite;
-    opacity:.4;
+    animation:heartMove 20s linear infinite;
+    opacity:.5;
 }
 
 @keyframes heartMove{
@@ -341,7 +374,6 @@ section h2{
     to{ transform:translateX(140%); }
 }
 
-/* Floating Balloons */
 .balloons::before{
     content:"🎈 🎈 🎈 🎈 🎈 🎈";
     position:absolute;
@@ -367,17 +399,17 @@ section h2{
     height:55px;
     border-radius:15px;
     margin:8px 0;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
 }
 
-.one{ background:#ff9aa2; }
+.one{ background:#ff4d6d; }
 .two{ background:#ffd166; }
 .three{ background:#ffffff; }
 
-/* Candle */
 .candle{
     width:16px;
     height:65px;
-    background:white;
+    background:#ffffff;
     margin:auto;
     position:relative;
     border-radius:10px;
@@ -392,16 +424,15 @@ section h2{
     top:-18px;
     left:50%;
     transform:translateX(-50%);
-    box-shadow:0 0 20px gold;
+    box-shadow:0 0 20px gold, 0 0 40px #ff758c;
     animation:flicker .5s infinite alternate;
 }
 
 @keyframes flicker{
     from{ transform:translateX(-50%) scale(1); }
-    to{ transform:translateX(-50%) scale(1.15); }
+    to{ transform:translateX(-50%) scale(1.2); }
 }
 
-/* ⚡ THE CONFETTI FIX: Keeps z-index lower than the popup so click triggers correctly */
 #confetti{
     position:fixed;
     top:0;
@@ -434,12 +465,14 @@ section h2{
     100%{ box-shadow:0 0 8px rgba(255,255,255,.3); }
 }
 
-/* Mobile Responsiveness Screen Settings */
+/* Mobile Responsiveness */
 @media(max-width:768px){
-    .hero h1{ font-size:52px; }
+    .hero h1{ font-size:48px; }
     .subtitle{ font-size:18px; }
+    .glass{ padding:30px 20px; }
     .glass h2{ font-size:30px; }
     .glass p{ font-size:17px; }
+    .letter{ padding:35px 25px; }
     button{ width:90%; }
     .gift{ width:140px; height:140px; }
 }
