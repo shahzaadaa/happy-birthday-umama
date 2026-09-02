@@ -3,172 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Umama ❤️</title>
+    <meta name="theme-color" content="#1b0c2c">
+    <meta name="description" content="A special birthday celebration made for Umama.">
+    <title>Happy Birthday Umama ✨</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="loader" role="status" aria-live="polite">
+        <div class="loader-orbit" aria-hidden="true">
+            <span>✨</span>
+            <span>🌸</span>
+            <span>💝</span>
+        </div>
+        <p class="loader-kicker">Preparing something beautiful</p>
+        <h1>For Umama</h1>
+        <div class="loader-line"><span></span></div>
+    </div>
 
-<!-- Loader Section -->
-<div id="loader">
-    <h1>Loading a Special Surprise for Umama...</h1>
-</div>
+    <div class="ambient" aria-hidden="true">
+        <div class="aurora aurora-one"></div>
+        <div class="aurora aurora-two"></div>
+        <div id="starField" class="star-field"></div>
+        <div class="grain"></div>
+    </div>
 
-<!-- Decorative Background Elements -->
-<div class="stars"></div>
-<div class="hearts"></div>
-<div class="balloons"></div>
+    <canvas id="confetti" aria-hidden="true"></canvas>
 
-<!-- Hero Welcome Section -->
-<section class="hero">
-    <h3>🎉 Happy Birthday To My Loving Wife 🎉</h3>
-    <h1>Umama ❤️</h1>
-    <p class="subtitle">
-        Today isn't just another day.
-        It's the day the world became so much brighter, and my life became complete because you were born.
-    </p>
-    <button id="startBtn">
-        Open Your Surprise 🎁
+    <button id="musicToggle" class="music-toggle" type="button" aria-label="Play birthday music" aria-pressed="false">
+        <span class="music-icon" aria-hidden="true">♪</span>
+        <span class="music-label">Music</span>
+        <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
     </button>
-</section>
 
-<!-- Main Birthday Message -->
-<section id="surprise" class="hidden">
-    <div class="glass">
-        <h2>My Dearest Umama 🌸</h2>
-        <p>
-            Happy Birthday to my incredible wife and my absolute best friend.
-            Thank you for bringing so much love, warmth, peace, and joy into my life every single day.
-        </p>
-        <p>
-            I genuinely hope this new year of your life is filled with endless happiness,
-            success, health, laughter, beautiful moments, and countless reasons to smile.
-        </p>
-        <p>
-            May Allah bless you with continuous health and joy, protect your radiant heart,
-            and grant every single wish and dream you hold dear.
-        </p>
-        <p>
-            Thank you for being my anchor, my partner, and my favorite person in the entire world.
-            Being by your side is my greatest blessing.
-        </p>
-        <h3>
-            Happy Birthday Once Again, My Love ❤️
-        </h3>
-        <h2>
-            Forever Yours,
-            <br>
-            <span>Muneeb</span>
-        </h2>
-    </div>
-</section>
+    <nav id="journeyNav" class="journey-nav hidden" aria-label="Birthday journey progress">
+        <a href="#messageSection" data-section="messageSection"><span>1</span><b>Wish</b></a>
+        <a href="#giftSection" data-section="giftSection"><span>2</span><b>Gifts</b></a>
+        <a href="#cakeSection" data-section="cakeSection"><span>3</span><b>Cake</b></a>
+        <a href="#letterSection" data-section="letterSection"><span>4</span><b>Letter</b></a>
+    </nav>
 
-<!-- Interactive Gift Section -->
-<section id="giftSection" class="hidden">
-    <h2>Unwrap Your Special Surprises 🎁</h2>
-    <div class="gift-container">
-        <div class="gift" onclick="openGift(1)">
-            🎁
-            <p>Gift 1</p>
+    <header class="hero" id="top">
+        <div class="hero-content">
+            <p class="eyebrow"><span></span> A little birthday universe <span></span></p>
+            <div class="hero-sparkle hero-sparkle-one" aria-hidden="true">✦</div>
+            <div class="hero-sparkle hero-sparkle-two" aria-hidden="true">✧</div>
+            <p class="hero-note">A day worth celebrating</p>
+            <h1><span>Happy Birthday</span><strong>Umama</strong></h1>
+            <p class="subtitle">
+                Today isn't just another day. It's a celebration of you, the happiness you bring,
+                and all the beautiful moments still waiting ahead.
+            </p>
+            <button id="startBtn" class="primary-button" type="button">
+                <span>Open your surprise</span>
+                <span class="button-gift" aria-hidden="true">🎁</span>
+            </button>
+            <p class="sound-hint">Best experienced with sound on</p>
         </div>
-        <div class="gift" onclick="openGift(2)">
-            🎁
-            <p>Gift 2</p>
+        <div class="scroll-cue" aria-hidden="true"><span></span></div>
+    </header>
+
+    <main id="birthdayJourney" class="hidden">
+        <section id="messageSection" class="story-section reveal" aria-labelledby="messageTitle">
+            <div class="section-number" aria-hidden="true">01</div>
+            <div class="glass-card message-card">
+                <p class="section-kicker">A wish from the heart</p>
+                <h2 id="messageTitle">My Dearest Umama <span aria-hidden="true">🌸</span></h2>
+                <div class="gold-divider"><span>✦</span></div>
+                <p>
+                    Happy Birthday, Umama. Your kindness, warmth, and positive spirit make the days around you brighter.
+                    Today is a celebration of everything that makes you special.
+                </p>
+                <p>
+                    I genuinely hope this new year of your life is filled with endless happiness,
+                    success, health, laughter, beautiful moments, and countless reasons to smile.
+                </p>
+                <p>
+                    May Allah bless you with continuous health and joy, protect your radiant heart,
+                    and grant every single wish and dream you hold dear.
+                </p>
+                <p class="highlight-line">May your year be as wonderful as the happiness you share.</p>
+                <div class="signature">
+                    <small>With warm wishes,</small>
+                    <strong>Muneeb</strong>
+                </div>
+            </div>
+        </section>
+
+        <section id="giftSection" class="story-section reveal" aria-labelledby="giftTitle">
+            <div class="section-number" aria-hidden="true">02</div>
+            <div class="section-heading">
+                <p class="section-kicker">Three little surprises</p>
+                <h2 id="giftTitle">Choose a gift to unwrap</h2>
+                <p>Each one holds something chosen especially for your birthday.</p>
+            </div>
+            <div class="gift-grid">
+                <button class="gift-card" type="button" data-gift="1" aria-label="Open gift one: A birthday wish">
+                    <span class="gift-number">01</span>
+                    <span class="gift-box" aria-hidden="true"><i class="gift-lid"></i><i class="gift-body"></i><i class="gift-bow">♡</i></span>
+                    <strong>A Birthday Wish</strong>
+                    <small>Tap to unwrap</small>
+                </button>
+                <button class="gift-card featured" type="button" data-gift="2" aria-label="Open gift two: A prayer for you">
+                    <span class="gift-number">02</span>
+                    <span class="gift-box" aria-hidden="true"><i class="gift-lid"></i><i class="gift-body"></i><i class="gift-bow">♡</i></span>
+                    <strong>A Prayer for You</strong>
+                    <small>Tap to unwrap</small>
+                </button>
+                <button class="gift-card" type="button" data-gift="3" aria-label="Open gift three: A little reminder">
+                    <span class="gift-number">03</span>
+                    <span class="gift-box" aria-hidden="true"><i class="gift-lid"></i><i class="gift-body"></i><i class="gift-bow">♡</i></span>
+                    <strong>A Little Reminder</strong>
+                    <small>Tap to unwrap</small>
+                </button>
+            </div>
+            <p id="giftProgress" class="gift-progress" aria-live="polite">0 of 3 surprises opened</p>
+        </section>
+
+        <section id="cakeSection" class="story-section cake-section reveal" aria-labelledby="cakeTitle">
+            <div class="section-number" aria-hidden="true">03</div>
+            <div class="section-heading">
+                <p class="section-kicker">A birthday tradition</p>
+                <h2 id="cakeTitle">Close your eyes &amp; make a wish</h2>
+                <p>When your wish is ready, blow out the candle.</p>
+            </div>
+            <div class="cake-scene" aria-label="A decorated birthday cake with one lit candle">
+                <div class="candle"><span class="wick"></span><span class="flame"></span></div>
+                <div class="cake-top"><span class="berry b1"></span><span class="berry b2"></span><span class="berry b3"></span></div>
+                <div class="cake-layer top-layer"><span class="drip d1"></span><span class="drip d2"></span><span class="drip d3"></span></div>
+                <div class="cake-layer bottom-layer"><span class="cake-message">UMAMA</span></div>
+                <div class="cake-plate"></div>
+            </div>
+            <button id="blowBtn" class="secondary-button" type="button">Blow out the candle <span aria-hidden="true">🕯️</span></button>
+            <p id="wishGranted" class="wish-granted hidden" role="status">Your wish has been sent to the stars ✨</p>
+        </section>
+
+        <section id="letterSection" class="story-section reveal" aria-labelledby="letterTitle">
+            <div class="section-number" aria-hidden="true">04</div>
+            <div class="section-heading">
+                <p class="section-kicker">One final envelope</p>
+                <h2 id="letterTitle">A letter for Umama</h2>
+            </div>
+            <div class="letter-wrap">
+                <button id="openLetterBtn" class="envelope" type="button" aria-expanded="false" aria-controls="letterPaper">
+                    <span class="envelope-back"></span>
+                    <span class="envelope-paper-preview">For Umama <small>with warm wishes &amp; prayers</small></span>
+                    <span class="envelope-front"></span>
+                    <span class="envelope-seal" aria-hidden="true">M</span>
+                    <span class="envelope-instruction">Tap to open</span>
+                </button>
+
+                <article id="letterPaper" class="letter-paper hidden">
+                    <p class="letter-date">On your special day</p>
+                    <h2>Dear Umama,</h2>
+                    <p>
+                        Words can never fully express how grateful I am for the happiness, kindness, and encouragement you share.
+                    </p>
+                    <p>
+                        Thank you for your kindness, your endless support, every shared laugh, and every beautiful memory we continue to build together.
+                    </p>
+                    <p>
+                        Your presence brings warmth to ordinary moments, simply because you are exactly who you are.
+                    </p>
+                    <p>
+                        No matter where life leads, I pray that you always remain blessed, happy, healthy, and surrounded by people who value you.
+                    </p>
+                    <p>
+                        Never stop smiling and keep shining in your own wonderful way. Happy Birthday once again. May Allah bless you today, tomorrow, and always.
+                    </p>
+                    <div class="letter-signature">
+                        <small>With warm wishes and prayers,</small>
+                        <strong>Muneeb</strong>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="finalSection" class="story-section final-section reveal" aria-labelledby="finalTitle">
+            <div class="final-halo" aria-hidden="true"></div>
+            <p class="section-kicker">Today, tomorrow &amp; always</p>
+            <h2 id="finalTitle"><span>Happy Birthday</span> Umama</h2>
+            <p>
+                May this new chapter be filled with peace, laughter, beautiful memories,
+                and countless reasons to smile. Keep shining in your own wonderful way.
+            </p>
+            <div class="final-emojis" aria-hidden="true">🌸 <span>✦</span> 🎂 <span>✦</span> 💝</div>
+            <div class="final-signature"><small>A celebration made for you by</small><strong>Muneeb</strong></div>
+            <button id="replayBtn" class="text-button" type="button">Celebrate again ↻</button>
+        </section>
+    </main>
+
+    <div id="giftPopup" class="popup hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="popupTitle">
+        <div class="popup-content">
+            <button id="closePopup" class="popup-close" type="button" aria-label="Close surprise">×</button>
+            <div id="popupIcon" class="popup-icon" aria-hidden="true">💝</div>
+            <p class="section-kicker">Surprise revealed</p>
+            <h2 id="popupTitle">For Umama</h2>
+            <p id="giftMessage"></p>
+            <button id="popupDone" class="popup-done" type="button">Keep exploring</button>
         </div>
-        <div class="gift" onclick="openGift(3)">
-            🎁
-            <p>Gift 3</p>
-        </div>
     </div>
-</section>
 
-<!-- Surprise Popup Modal Box -->
-<div id="popup" class="hidden" style="display: none;">
-    <div class="popup-content">
-        <span id="closePopup">&times;</span>
-        <h2>Surprise ❤️</h2>
-        <p id="giftMessage"></p>
-    </div>
-</div>
+    <audio id="music" loop preload="metadata">
+        <source src="birthday.mp3" type="audio/mpeg">
+    </audio>
 
-<!-- Cake Section -->
-<section id="cakeSection" class="hidden">
-    <h2>Make a Birthday Wish, My Wife ✨</h2>
-    <div class="cake">
-        <div class="candle">
-            <div class="flame"></div>
-        </div>
-        <div class="layer one"></div>
-        <div class="layer two"></div>
-        <div class="layer three"></div>
-    </div>
-    <button id="blowBtn">
-        Blow the Candle 🕯️
-    </button>
-</section>
-
-<!-- Letter Section -->
-<section id="letterSection" class="hidden">
-    <div class="letter">
-        <h2>💌 A Love Letter For Umama</h2>
-        <p>
-            Dearest Umama,
-            <br><br>
-            Words can never fully express how deeply grateful I am to have you as my wife and my best friend.
-            <br><br>
-            Thank you for your kindness, your endless support, every shared laugh, and every beautiful memory we continue to build together.
-            <br><br>
-            You illuminate my life in ways you'll never truly know, just by being exactly who you are.
-            <br><br>
-            No matter where life leads us, I pray that you always remain blessed, happy, healthy, and deeply cherished.
-            <br><br>
-            Never stop smiling—your smile is my favorite thing in the world.
-            <br><br>
-            Happy Birthday once again, my beautiful wife. May Allah bless you today, tomorrow, and always.
-            <br><br>
-            ❤️
-        </p>
-        <h3>
-            With all my love and prayers,
-            <br><br>
-            Your Husband & Best Friend,
-            <br><br>
-            Muneeb
-        </h3>
-    </div>
-</section>
-
-<!-- Final Wish Section -->
-<section id="finalSection" class="hidden">
-    <h1>🎉 HAPPY BIRTHDAY UMAMA ❤️</h1>
-    <p>
-        Thank you for visiting your birthday surprise.
-        I hope it brought a big smile to your face.
-        May this year be your happiest and most beautiful year yet.
-        Always keep shining, my love.
-        <br><br>
-        🌸✨🎂🎈❤️
-    </p>
-    <h2>
-        Forever Loving You,
-        <br>
-        Muneeb
-    </h2>
-</section>
-
-<!-- Confetti Effect Layer -->
-<canvas id="confetti"></canvas>
-
-<!-- Background Music -->
-<audio id="music" loop>
-    <source src="birthday.mp3" type="audio/mpeg">
-</audio>
-
-<!-- External Scripts Link -->
-<script src="script.js"></script>
-
+    <noscript><p class="noscript">Please enable JavaScript to open this birthday surprise.</p></noscript>
+    <script src="script.js"></script>
 </body>
 </html>
